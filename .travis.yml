@@ -115,7 +115,7 @@ jobs:
         - npm start &
         - "../../test/smoke/smoke-test.sh http://localhost:3000"
     - stage: deploy
-      if: "(branch = master OR branch = develop) AND NOT type =
+      if: "(branch = master OR branch = develop OR branch = main) AND NOT type =
       pull_request"
       install: skip
       script: skip

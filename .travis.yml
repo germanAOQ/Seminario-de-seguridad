@@ -127,10 +127,10 @@ jobs:
           api_key:
             secure: faVT3Ne/O7lVo0+pTm6RcXss0ivvSoODaxMkiVwdpk/51/EsRd4+/Gjmp3RGPmW5H5luOephsI8uFMMhgKiu5i3NV58ZSx29Z0aby+bfIhesZGZqJQvxeW8B0J8vlQFnEHP6xc6SAlXSdNjNpDeBaV7WSFSGKGp4Nh5QyO2ySLI=
           app:
-            main: Seminario-de-seguridad
+            main: juice-shop
             develop: juice-shop-staging
           on:
-            repo: germanAOQ/Seminario-de-seguridad
+            repo: germanAOQ/juice-shop
           edge: true
     - stage: docker
       arch: amd64

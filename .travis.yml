@@ -43,7 +43,7 @@ deploy:
     tag_name: "$TRAVIS_TAG"
     on:
       branch: main
-      repo: germanAOQ/juice-shop
+      repo: germanAOQ/Seminario-de-seguridad
       tags: true
     edge: true
 jobs:

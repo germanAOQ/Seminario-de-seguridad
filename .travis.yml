@@ -104,12 +104,12 @@ jobs:
         - wiki &
         - wget https://github.com/zaproxy/zaproxy/releases/download/2.5.0/ZAP_2.5.0_Linux.tar.gz
         - tar zxvf ZAP?2.5.0_Linux.tar.gz
-        - ./ZAP_2.5.0/zap.sh -config api.key=12345 -port 8090 -daemon &
+        - ./ZAP_2.5.0/zap.sh -config api.key=12345 -port 443 -daemon &
         - sleep 30
       script:
-        - zap-cli -p 8090 --api-key 12345 spider http://localhost:3000
-        - zap-cli -p 8090 --api-key 12345 active-scan http://localhost:3000
-        - sudo zap-cli -p 8090 --api-key 12345 report -f html -o ./report.html
+        - zap-cli -p 443 --api-key 12345 spider http://localhost:3000
+        - zap-cli -p 443 --api-key 12345 active-scan http://localhost:3000
+        - sudo zap-cli -p 443 --api-key 12345 report -f html -o ./report.html
         - lynx ./report.html -dump
     - stage: e2e
       if: tag IS blank

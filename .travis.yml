@@ -107,8 +107,8 @@ jobs:
         - ./ZAP_2.5.0/zap.sh -config api.key=12345 -port 8090 -daemon &
         - sleep 30
       script:
-        - zap-cli -p 8090 --api-key 12345 spider http://localhost:3000
-        - zap-cli -p 8090 --api-key 12345 active-scan http://localhost:3000
+        - zap-cli -p 8090 --api-key 12345 spider http://localhost:3001
+        - zap-cli -p 8090 --api-key 12345 active-scan http://localhost:3001
         - sudo zap-cli -p 8090 --api-key 12345 report -f html -o ./report.html
         - lynx ./report.html -dump
     - stage: e2e

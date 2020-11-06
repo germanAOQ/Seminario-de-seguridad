@@ -27,6 +27,6 @@ jobs:
         with:
     # GitHub Token to create issues in the repository
     # Target URL
-          target: https://preview.owasp-juice.shop/
+          target: https://seminario-seguridad.herokuapp.com
 
  

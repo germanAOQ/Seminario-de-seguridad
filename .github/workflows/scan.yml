@@ -20,7 +20,7 @@ jobs:
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:      
-      - run: sudo apt-get -y install nodejs 
+      - run: sudo aptitude install nodejs-legacy
       - run: sudo git clone https://github.com/germanAOQ/Seminario-de-seguridad.git
       - run: npm install Seminario-de-seguridad 
       - run: npm start Seminario-de-seguridad

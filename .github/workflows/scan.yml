@@ -11,14 +11,21 @@ on:
     branches: [ main ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
+jobs: 
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    
+    
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
+    steps:      
+      - run: sudo apt-get -y install nodejs 
+      - run: git https://github.com/germanAOQ/Seminario-de-seguridad.git
+      - run: cd juice-shop
+      - run: npm install
+      - run: npm start
+        
       - name: OWASP ZAP Baseline Scan
   # You may pin to the exact commit or the version.
   # uses: zaproxy/action-baseline@acd8e997263688cb49cb5ff8247a4b2758c548ab
@@ -26,5 +33,6 @@ jobs:
         with:
     # GitHub Token to create issues in the repository
     # Target URL
-          target: https://seminario-seguridad.herokuapp.com/
+          target: http://localhost:3000
+
  

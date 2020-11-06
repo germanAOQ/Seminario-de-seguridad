@@ -21,11 +21,11 @@
   ],
   "homepage": "https://owasp-juice.shop",
   "bugs": {
-    "url": "https://github.com/bkimminich/juice-shop/issues"
+    "url": "https://github.com/germanAOQ/Seminario-de-seguridad/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bkimminich/juice-shop.git"
+    "url": "https://github.com/germanAOQ/Seminario-de-seguridad"
   },
   "license": "MIT",
   "author": "Björn Kimminich <bjoern.kimminich@owasp.org> (https://kimminich.de)",

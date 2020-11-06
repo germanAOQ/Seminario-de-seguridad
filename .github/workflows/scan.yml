@@ -21,7 +21,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:      
       - run: sudo apt-get -y install nodejs 
-      - run: git https://github.com/germanAOQ/Seminario-de-seguridad.git
+      - run: sudo git clone https://github.com/germanAOQ/Seminario-de-seguridad.git
       - run: cd juice-shop
       - run: npm install
       - run: npm start

@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Scan OWASP ZAP
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
@@ -20,11 +20,6 @@ jobs:
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:      
-      - run: sudo apt-get install nodejs
-      - run: sudo git clone https://github.com/germanAOQ/Seminario-de-seguridad.git
-      - run: sudo npm install Seminario-de-seguridad 
-      - run: sudo npm start Seminario-de-seguridad
-        
       - name: OWASP ZAP Baseline Scan
   # You may pin to the exact commit or the version.
   # uses: zaproxy/action-baseline@acd8e997263688cb49cb5ff8247a4b2758c548ab
@@ -32,6 +27,6 @@ jobs:
         with:
     # GitHub Token to create issues in the repository
     # Target URL
-          target: http://localhost:3000
+          target: https://preview.owasp-juice.shop/
 
  

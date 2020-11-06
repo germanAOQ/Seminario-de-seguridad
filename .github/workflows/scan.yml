@@ -23,7 +23,7 @@ jobs:
       - run: sudo apt-get -y install nodejs 
       - run: sudo git clone https://github.com/germanAOQ/Seminario-de-seguridad.git
       - run: cd Seminario-de-seguridad
-      - run: ls Seminario-de-seguridad
+      - run: ls
       - run: npm init
       - run: npm install
       - run: npm start

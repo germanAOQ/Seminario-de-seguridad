@@ -25,6 +25,7 @@ jobs:
       - run: cd Seminario-de-seguridad
       - run: ls Seminario-de-seguridad
       - run: npm install
+      - run: npm cache verify
       - run: npm start
         
       - name: OWASP ZAP Baseline Scan

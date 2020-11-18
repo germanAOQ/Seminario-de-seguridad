@@ -29,5 +29,5 @@ jobs:
     # Target URL
           target: https://preview.owasp-juice.shop
       - name: prueba
-        uses: ls /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad
+        run: ls /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad
  

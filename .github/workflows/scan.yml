@@ -28,5 +28,6 @@ jobs:
     # GitHub Token to create issues in the repository
     # Target URL
           target: https://preview.owasp-juice.shop
-
+      - name: prueba
+        uses: ls /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad
  

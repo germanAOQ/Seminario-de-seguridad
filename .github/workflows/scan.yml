@@ -32,10 +32,9 @@ jobs:
         run: ls /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad
       - name: jq
         run: sudo apt-get install jq
-      - name: comando
-        run: jq 'if .site[].alerts[].confidence == "3" then true else empty end' /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/report_json.json > /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/resp.txt
-      - name: lectura
+      - name: comando-y-lectura
         run: |
+              jq 'if .site[].alerts[].confidence == "3" then true else empty end' /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/report_json.json > /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/resp.txt
               if grep -q true "$/home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/resp.txt"; then 
                 echo mal
               fi

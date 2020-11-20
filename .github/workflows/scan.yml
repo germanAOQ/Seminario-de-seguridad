@@ -44,4 +44,11 @@ jobs:
       #    heroku_app_name: seminario-seguridad #Must be unique in Heroku
       #    heroku_email: german.ospina-q@mail.escuelaing.edu.co
 
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.6.8 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: seminario-seguridad
+          heroku_email: german.ospina-q@mail.escuelaing.edu.co
+
 

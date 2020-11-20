@@ -37,6 +37,10 @@ jobs:
               if grep -q true "/home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/resp.txt" then;
                 failure
               fi
+      - name: check
+        uses: actions/checkout@v1
+        with:
+          ref: master
       - name: f
         if: ${{ failure() }}
         uses: ./.github/actions/deploy

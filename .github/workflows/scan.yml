@@ -16,8 +16,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    
-    
+    env:
+      condition: false
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:      
       - name: OWASP ZAP Scan
@@ -31,8 +31,6 @@ jobs:
       - name: prueba
         run: ls /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad
       - name: comando-y-lectura
-        env:
-          condition: false
         run: |
               jq 'if .site[].alerts[].confidence == "3" then true else empty end' /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/report_json.json > /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/resp.txt
               if grep -q true "/home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/resp.txt" then;

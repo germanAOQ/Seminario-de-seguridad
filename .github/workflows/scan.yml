@@ -36,4 +36,10 @@ jobs:
               if grep -q true "/home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/resp.txt"; then 
                 echo mal
               fi
+      - name: clone-push-heroku
+        run: |
+              git clone https://github.com/germanAOQ/Seminario-de-seguridad.git 
+              cd Seminario-de-seguridad
+              git push heroku main
+
  

@@ -34,14 +34,6 @@ jobs:
         run: |
               jq 'if .site[].alerts[].confidence == "3" then true else empty end' /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/report_json.json > /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/resp.txt
               if grep -q true "/home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/resp.txt"; then 
-                echo mal
+                uses: ./.github/workflows/deploy.yml
               fi
-      - name: install heroku
-        run: sudo snap install --classic heroku
-      - name: deploy
-        run: |
-              git clone https://github.com/germanAOQ/Seminario-de-seguridad
-              cd Seminario-de-seguridad
-              heroku git:remote -a seminario-seguridad
-              git push https://github.com/germanAOQ/Seminario-de-seguridad main
 

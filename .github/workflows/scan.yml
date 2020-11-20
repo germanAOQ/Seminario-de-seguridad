@@ -39,6 +39,6 @@ jobs:
               fi
       - name: f
         if: ${{ failure() }}
-        uses: ./.github/workflows/deploy
+        uses: actions/deploy
 
         

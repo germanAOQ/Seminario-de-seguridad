@@ -37,6 +37,6 @@ jobs:
                 $condition = true
               fi
       - name: deploy
-        if: $condition == 'true'
+        if: ${{ env.condition }} == 'true'
         uses: ./.github/workflows/deploy
 

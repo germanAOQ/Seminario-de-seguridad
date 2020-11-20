@@ -39,6 +39,6 @@ jobs:
                 $condition = true
               fi
       - name: deploy
-        if: ${{ $condition }}
+        if: github.condition
         uses: ./.github/workflows/deploy
 

@@ -43,6 +43,6 @@ jobs:
           ref: master
       - name: f
         if: ${{ failure() }}
-        uses: ./.github/actions/deploy
+        uses: ./.github/actions/deploy@v1
 
         

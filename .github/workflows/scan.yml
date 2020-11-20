@@ -20,7 +20,9 @@ jobs:
     env:
       condition: false
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:      
+    steps:
+      - name: ver carpetas
+        run: ls /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad
       - name: OWASP ZAP Scan
   # You may pin to the exact commit or the version.
   # uses: zaproxy/action-baseline@acd8e997263688cb49cb5ff8247a4b2758c548ab

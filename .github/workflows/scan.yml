@@ -31,10 +31,14 @@ jobs:
       - name: prueba
         run: ls /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad
       - name: comando-y-lectura
-        run: jq 'if .site[].alerts[].confidence == "3" then true else empty end' /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/report_json.json > /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/resp.txt
         env:
-          condition: grep -q true "/home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/resp.txt"
+          condition: ${{ false }}
+        run: |
+              jq 'if .site[].alerts[].confidence == "3" then true else empty end' /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/report_json.json > /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/resp.txt
+              if grep -q true "/home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/resp.txt" then;
+                $condition = true
+              fi
       - name: deploy
-        if: condition
+        if: ${{ $condition }}
         uses: ./.github/workflows/deploy
 

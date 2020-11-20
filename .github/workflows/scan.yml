@@ -43,5 +43,5 @@ jobs:
               git clone https://github.com/germanAOQ/Seminario-de-seguridad
               cd Seminario-de-seguridad
               heroku git:remote -a seminario-seguridad
-              git push seminario-seguridad master
+              git push heroku main
 

@@ -24,7 +24,7 @@ jobs:
       - name: check
         uses: actions/checkout@v1
       - name: ver carpetas
-        run: ls /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad
+        run: ls /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/actions
       - name: OWASP ZAP Scan
   # You may pin to the exact commit or the version.
   # uses: zaproxy/action-baseline@acd8e997263688cb49cb5ff8247a4b2758c548ab
@@ -44,6 +44,6 @@ jobs:
               fi
       - name: f
         if: ${{ failure() }}
-        uses: ./actions/deploy@v1
+        uses: ./actions/deploy
 
         

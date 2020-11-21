@@ -44,7 +44,7 @@ jobs:
               fi
       - name: f
         if: ${{ failure() }}
-        uses: ./actions/deploy.yml
+        uses: ./actions/deploy@main
         with:
           branch: main
 

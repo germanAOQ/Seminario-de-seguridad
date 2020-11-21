@@ -44,6 +44,6 @@ jobs:
               fi
       - name: f
         if: ${{ failure() }}
-        uses: ./.github/actions/deploy@v1
+        uses: ./actions/deploy@v1
 
         

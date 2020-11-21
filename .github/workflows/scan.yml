@@ -21,8 +21,10 @@ jobs:
       condition: false
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: check
+        uses: actions/checkout@v1
       - name: ver carpetas
-        run: ls /home
+        run: ls /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad
       - name: OWASP ZAP Scan
   # You may pin to the exact commit or the version.
   # uses: zaproxy/action-baseline@acd8e997263688cb49cb5ff8247a4b2758c548ab
@@ -33,16 +35,13 @@ jobs:
           target: https://preview.owasp-juice.shop
       - name: prueba
         run: ls /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad
+      
       - name: comando-y-lectura
         run: |
               jq 'if .site[].alerts[].confidence == "3" then true else empty end' /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/report_json.json > /home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/resp.txt
               if grep -q true "/home/runner/work/Seminario-de-seguridad/Seminario-de-seguridad/resp.txt" then;
                 failure
               fi
-      - name: check
-        uses: actions/checkout@v1
-        with:
-          ref: master
       - name: f
         if: ${{ failure() }}
         uses: ./.github/actions/deploy@v1
